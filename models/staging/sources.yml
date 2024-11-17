@@ -1,0 +1,12 @@
+version: 1
+
+sources:
+  - name: projeto_adw
+    description: Base de dados da empresa Adventure Works.
+    database: FEA24_9
+    schema: raw_adventure_works
+    tables:  
+          - name: orderdetail
+        description: tabela onde contem os detalhes de cada venda realizada
+         - name: orderheader
+         description: Tabela onde contem os dados cabeçado dos pedidos
