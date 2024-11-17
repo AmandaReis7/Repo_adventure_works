@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: int_adw_product
+  - name: dim_produtos__adw
     description: Tabela onde contem todos os dados dos produtos incluindo categoria e subcategoria.
     columns:
     - name: ID_PRODUTO
@@ -74,5 +74,3 @@ models:
 
     - name: NOME_SUBCATEGORY
       description: Contém o nome da subcategoria do produto.
-
-      
