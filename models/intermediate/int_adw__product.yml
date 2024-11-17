@@ -1,11 +1,81 @@
 version: 2
-
 models:
   - name: int_adw_product
     description: Tabela onde contem todos os dados dos produtos incluindo categoria e subcategoria.
     columns:
-      - name: PK_FUNCIONARIO
-        description: blablabla.
-        data_tests:
-          - unique
-          - not_null
+    - name: ID_PRODUTO
+      description: Contém o código do id de cada produto.
+      data_tests:
+      - unique
+      - not_null
+
+    - name: NOME_PRODUTO
+      description: Contém a descrição do nome do produto.
+      data_tests:
+      - unique
+      - not_null
+
+    - name: NUM_PRODUTO
+      description: Contém a descrição do número correspondente ao produto.
+      data_tests:
+      - unique 
+      - not_null
+
+    - name: IND_FABRICACAO_INTERNA
+      description: Refere-se à um indicador informando se o produto é de fabricação interna.
+
+    - name: IND_PRODUTO_FINALIZADO
+      description: Refere-se à um indicador informando se o produto está ou não finalizado.
+
+    - name: COR
+      description: Refere-se à cor do produto.
+
+    - name: QTD_ESTOQUE
+      description: Refere-se à quantidade de produtos disponíveis no estoque.
+
+    - name: NIVEL_DE_REESTOQUE
+      description: Contém a informação da quantidade limite em que o estoque pode chegar, sendo necessário reabastecer o estoque.
+
+    - name: CUSTO_PADRAO
+      description: Contém a informação do custo de produção.
+
+    - name: LISTA_DE_PRECO
+      description: Contém a informação do custo para venda.
+
+    - name: TAMANHO
+      description: Contém a informação do tamanho do produto. 
+
+    - name: COD_MEDIDA_TAMANHO
+      description: Contém a informação do código do tamanho do produto.
+
+    - name: COD_UNID_MED_PESO
+      description: Contém a informação do código do peso do produto.
+
+    - name: PESO
+      description: Contém a informação do peso do produto.
+
+    - name: DIAS_PARA_FABRICACAO
+      description: Contém a informação em dias de quanto tempo o produto leva para ficar pronto.
+
+    - name: PRODUCTLINE
+      description: Contém a informação referente a linha do produto.
+
+    - name: class
+      description: Contém a informação referente a classe do produto.
+
+    - name: ID_CATEGORIA
+      description: Contém o código do id da categoria do produto.
+
+    - name: NOME_CATEGORIA
+      description: Contém o nome da categoria do produto.
+
+    - name: ROWGUID
+      description: Representa a identificação da linha.
+      data_tests:
+      - unique
+      - not_null
+
+    - name: NOME_SUBCATEGORY
+      description: Contém o nome da subcategoria do produto.
+
+      
