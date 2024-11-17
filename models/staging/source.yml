@@ -1,0 +1,22 @@
+version: 1
+
+sources:
+  - name: projeto_adw
+    description: Base de dados da empresa Adventure Works.
+    database: FEA24_9
+    schema: raw_adventure_works
+    tables:  
+      - name: SALESORDERDETAIL
+        description: tabela onde contem os detalhes de cada venda realizada
+
+      - name: SALESORDERHEADER
+        description: Tabela onde contem os dados cabeçado dos pedidos   
+
+      - name: PRODUCT
+        description: Tabela onde contem os dados dos produtos.
+
+      - name: PRODUCTCATEGORY
+        description: Tabela onde contem informações da categoria dos produtos.
+
+      - name: PRODUCTSUBCATEGORY
+        description: Tabela onde contem as informações da subcategoria dos produdos.
