@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_adw_product
+    description: Tabela onde contem todos os dados dos produtos incluindo categoria e subcategoria.
+    columns:
+      - name: PK_FUNCIONARIO
+        description: blablabla.
+        data_tests:
+          - unique
+          - not_null

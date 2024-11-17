@@ -1,5 +1,5 @@
 with
-    sorderheader as (
+    orderheader as (
     select
             salesorderid as id_pedido_venda,  
             revisionnumber as num_revisao,  
@@ -24,8 +24,8 @@ with
             freight as frete,  
             totaldue as total_devido,  
             comment as comentario,  
-            cast(modifieddate as date) as data_modificacao
-            rowguid guia_linha, 
-        from {{ source("projeto_adw", "orderheader")}} 
+            cast(modifieddate as date) as data_modificacao,
+            rowguid guia_linha
+        from {{ source("projeto_adw", "SALESORDERHEADER")}} 
     ) 
 select * from orderheader

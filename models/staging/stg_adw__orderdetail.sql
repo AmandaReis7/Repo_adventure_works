@@ -1,6 +1,6 @@
 with 
     order_detail as (
-         select  
+        select  
          salesorderdetailid as id_detalhe_pedido,  
          salesorderid as id_pedido,  
          carriertrackingnumber as num_rastreamento, 
@@ -11,7 +11,7 @@ with
          unitpricediscount as desc_preco_unit , 
          rowguid, 
          cast(modifieddate as date) data_modificacao
-    from {{ source("projeto_adw", "orderdetail") }}
+    from {{ source("projeto_adw", "SALESORDERDETAIL") }}
 
 )
 select * from order_detail
