@@ -1,7 +1,7 @@
 with
     pessoas as (
         select
-         businessentityid as fk_id_funcionario,
+         businessentityid as fk_id_pessoa,
          persontype as tipo_pessoa,
          namestyle, 
          title,

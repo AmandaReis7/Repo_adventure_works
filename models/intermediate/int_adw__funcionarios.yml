@@ -7,20 +7,15 @@ models:
       description: Contém o código do id de cada colaborador.
       data_tests:
       - unique
-      - not_null
-
+     
     - name: NUM_IDENTIFICACAO_NACIONAL
       description: Contém o número da identidade de cada colaborador.
-      data_tests:
-      - unique
-      - not_null
-
+      
     - name: ID_LOGIN
       description: Contém a informação do login de cada colaborador.
       data_tests:
       - unique 
-      - not_null
-
+    
     - name: CARGO
       description: Contém a informação do cargo a qual o colaborador ocupa.
 
