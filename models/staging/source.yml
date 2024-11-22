@@ -20,3 +20,9 @@ sources:
 
       - name: PRODUCTSUBCATEGORY
         description: Tabela onde contem as informações da subcategoria dos produdos.
+
+      - name: EMPLOYEE
+        description: Tabela onde contém as informações dos colaboradores
+
+      - name: PERSON
+        description: Tabela onde contém os dados pessoais 

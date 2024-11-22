@@ -1,0 +1,67 @@
+version: 2
+models:
+  - name: int_adw_funcionarios
+    description: Tabela onde contém todos os dados dos colaboradores.
+    columns:
+    - name: ID_FUNCIONARIO
+      description: Contém o código do id de cada colaborador.
+      data_tests:
+      - unique
+      - not_null
+
+    - name: NUM_IDENTIFICACAO_NACIONAL
+      description: Contém o número da identidade de cada colaborador.
+      data_tests:
+      - unique
+      - not_null
+
+    - name: ID_LOGIN
+      description: Contém a informação do login de cada colaborador.
+      data_tests:
+      - unique 
+      - not_null
+
+    - name: CARGO
+      description: Contém a informação do cargo a qual o colaborador ocupa.
+
+    - name: PRIMEIRO_NOME
+      description: Contém o Primeiro nome do colaborador.
+
+    - name: NOME_DO_MEIO
+      description: Contém o nome do meio do colaborador.
+
+    - name: SOBRENOME
+      description: Contém o ultimo nome do colaborador.
+
+    - name: DT_NASCIMENTO
+      description: Contém os dados com a data de nascimento do colaborador.
+
+    - name: ESTADO_CIVIL
+      description: Contém a informação do estado civil do colaborador.
+
+    - name: GENERO
+      description: Contém a informação do genero de cada colaborador.
+
+    - name: DT_CONTRATACAO
+      description: Contém o registro com a data da contratação do colaborador. 
+
+    - name: IND_FUNC_ASSALARIADO
+      description: Refere-se a um indicador informando se o colaborador é assalariado.
+
+    - name: HORAS_DE_FERIAS
+      description: Contém a informação da quandidade de horas de férias em que o colaborador tem direito.
+
+    - name: HORAS_DE_LICENCA_MEDICA
+      description: Contém a informação da quandidade de horas em que o colaborador está de licença.
+
+    - name: IND_ATIVO
+      description: Refere-se a um indicador informando se o colaborador está ativo.
+
+    - name: ROWGUID
+      description: Representa a identificação da linha.
+
+    - name: MODIFIEDDATE
+      description: Refere-se a data em que o dado foi modficado.
+
+    - name: ORGANIZATIONNODE
+      description: Contém informações em uma estrutura hierárquica.
