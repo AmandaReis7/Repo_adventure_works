@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: dim_clientes__adw
+    description: Tabela onde contém todos os dados dos colaboradores.
+    columns:
+    - name: ID_CLIENTES
+      description: Contém o código do id de cada cliente.
+      data_tests:
+      - unique
+      
+
+    - name: ID_PESSOA
+      description: Contém o código do id da pessoa cliente.
+      
+    - name: ID_TERRITORIO_VENDAS
+      description: Contém o código do id do local de venda.    
+
+    - name: NOME_COMPLETO
+      description: Contém a informação do nome completo do cliente.
+
+    - name: TIPO_PESSOA
+      description: Contém a informação se o tipo de pessoa é empregado ou cliente.
+
+    - name: NOME_LOJA
+      description: Contém o nome da loja em que foi realizado a venda.

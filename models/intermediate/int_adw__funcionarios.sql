@@ -16,6 +16,7 @@
          pessoas.firstname as primeiro_nome,
          pessoas.middlename as nome_do_meio,
          pessoas.lastname as sobrenome,
+         pessoas.firstname ||' '|| pessoas.middlename ||' ' || pessoas.lastname as Nome_completo,
          funcionarios.birthdate as dt_nascimento,
          funcionarios.maritalstatus as estado_civil,
          funcionarios.genero,
@@ -29,7 +30,7 @@
          funcionarios.organizationnode
 
      from pessoas
-     left join funcionarios on funcionarios.id_funcionario = pessoas.fk_id_funcionario
+     left join funcionarios on funcionarios.id_funcionario = pessoas.fk_id_pessoa
      ) 
  select * from 
  funcionarios_completa

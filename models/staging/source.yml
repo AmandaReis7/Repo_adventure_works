@@ -25,4 +25,10 @@ sources:
         description: Tabela onde contém as informações dos colaboradores
 
       - name: PERSON
-        description: Tabela onde contém os dados pessoais 
+        description: Tabela onde contém os dados pessoais
+
+      - name: CUSTOMER
+        description: Tabela onde contém os dados dos clientes.
+
+      - name: STORE
+        description: Tabela onde contém os dados das lojas.
