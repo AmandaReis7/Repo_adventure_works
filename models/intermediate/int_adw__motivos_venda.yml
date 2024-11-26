@@ -1,0 +1,13 @@
+version: 2
+models:
+  - name: int_adw_motivos_venda
+    description: Tabela onde contém todos os dados dos motivos da venda
+    columns:
+    - name: ID_PEDIDO_VENDA
+      description: Contém o código do id de pedido.
+    
+    - name: MOTIVOS_AGRUPADOS
+      description: Contém os código dos motivos de forma agrupada, pois 1 pedido pode ter mais de um motivo assim no banco acaba duplicando.
+      
+    - name: NOMES_MOTIVO_VENDA
+      description: Contém os nomes dos motivos da venda.
