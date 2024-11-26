@@ -1,0 +1,22 @@
+version: 2
+models:
+  - name: int_adw_cartao_clientes
+    description: Tabela onde contém todos os dados dos cartoes dos clientes.
+    columns:
+    - name: ID_CARTAO_CLIENTE
+      description: Contém o código do id do cartão de cada cliente.
+      data_tests:
+      - unique
+      - not_null
+    
+    - name: TIPO_CARTAO
+      description: Contém a informação de qual tipo é o cartão do cliente..
+      
+    - name: NUMERO_CARTAO
+      description: Refere-se a informação do número do cartão do cliente.
+      
+    - name: MES_EXPIRACAO
+      description: Refere-se ao mês em que o cartão não estava ficará inválido para o uso.
+
+    - name: ANO_EXPIRACAO
+      description: Refere-se ao ano em que o cartão não estava ficará inválido para o uso.

@@ -32,3 +32,6 @@ sources:
 
       - name: STORE
         description: Tabela onde contém os dados das lojas.
+
+      - name: CREDITCARD
+        description: Tabela onde contém os dados dos cartões de créditos dos clientes
