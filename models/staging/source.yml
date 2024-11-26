@@ -47,3 +47,9 @@ sources:
 
       - name: COUNTRYREGION
         description: Tabela contendo informações dos códigos de país/região.
+
+      - name: SALESREASON
+        description: Tabela contendo os movivos das vendas.
+
+      - name: SALESORDERHEADERSALESREASON
+        description: Tabela onde contém os dados dos pedidos e motivos de venda
