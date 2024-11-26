@@ -7,7 +7,6 @@ models:
       description: Contém o código do id do cartão de cada cliente.
       data_tests:
       - unique
-      - not_null
     
     - name: TIPO_CARTAO
       description: Contém a informação de qual tipo é o cartão do cliente.

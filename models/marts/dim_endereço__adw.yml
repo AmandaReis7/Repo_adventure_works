@@ -1,0 +1,42 @@
+version: 2
+models:
+  - name: dim_endereço__adw
+    description: Tabela onde contém todos os dados referente à endereços.
+    columns:
+    - name: ID_ENDERECO
+      description: Contém o código do id do endereço cadastrado.
+      data_tests:
+      - unique
+      - not_null
+    
+    - name: ENDERECO_1
+      description: Refere-se ao endereço principal.
+      data_tests:
+        - not_null            
+      
+    - name: ENDERECO_2
+      description: Refere-se a segunda opção de endereço.
+      
+    - name: CIDADE
+      description: Nome da cidade.
+
+    - name: NOME_ESTADO
+      description: Nome do estado.
+
+    - name: CÓD_PAÍS
+      description: Nome da UF de cada país.
+
+    - name: TERRITÓRIO_VENDAS
+      description: Nome do território onde a venda foi realizada.
+
+    - name: COD_CX_POSTAL
+      description: Código da caixa postal.
+
+    - name: SPATIALLOCATION
+      description: Código de localização da mercadoria.
+
+    - name: ROWGUID
+      description: Identificação da linha.
+
+    - name: DATA_MODIFICACAO
+      description: Data da ultima modificação.
