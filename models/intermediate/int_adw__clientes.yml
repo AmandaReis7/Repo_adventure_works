@@ -1,7 +1,7 @@
 version: 2
 models:
   - name: int_adw_clientes
-    description: Tabela onde contém todos os dados dos colaboradores.
+    description: Tabela onde contém todos os dados dos clientes
     columns:
     - name: ID_CLIENTES
       description: Contém o código do id de cada cliente.
