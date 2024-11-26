@@ -17,7 +17,7 @@ with
      
      FROM pedidos_motivos_vendas
      LEFT JOIN motivos_venda ON motivos_venda.id_motivo_venda = pedidos_motivos_vendas.id_motivo_venda
-     where pedidos_motivos_vendas.id_pedido_venda = 43697
+     
 
       group by 
       pedidos_motivos_vendas.id_pedido_venda
