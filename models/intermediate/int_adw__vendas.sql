@@ -19,6 +19,7 @@ with
          pedidos_detalhe.OFERTA_ESPECIAL,
          pedidos_detalhe.PRECO_UNITARIO,
          pedidos_detalhe.DESC_PRECO_UNIT,
+         pedidos.DATA_PEDIDO,
          pedidos.DATA_VENCIMENTO,
          pedidos.DATA_ENVIO,
          pedidos.STATUS,
