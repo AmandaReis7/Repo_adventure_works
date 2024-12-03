@@ -35,6 +35,10 @@ models:
     - name: OFERTA_ESPECIAL****
       description: Refere-se ao código da oferta que o produto está cadastrada.
 
+    - name: DATA_PEDIDO
+      description: Contém a informação da data em que o pedido foi realizado.
+
+
     - name: DATA_ENVIO
       description: Contém a informação da data em que o pedido foi enviado.
 
