@@ -19,6 +19,7 @@ with
          pedidos_detalhe.OFERTA_ESPECIAL,
          pedidos_detalhe.PRECO_UNITARIO,
          pedidos_detalhe.DESC_PRECO_UNIT,
+         TO_CHAR(DATA_PEDIDO, 'MM/YYYY') AS COMPETENCIA,
          pedidos.DATA_PEDIDO,
          pedidos.DATA_VENCIMENTO,
          pedidos.DATA_ENVIO,
@@ -62,6 +63,10 @@ with
              NUM_PEDIDO_COMPRA,
              QTD_PEDIDO,
              OFERTA_ESPECIAL as ID_OFERTA,
+             --TO_DATE(DATA_PEDIDO || '01', 'YYYYMM') AS COMPETENCIA_DATA,
+             --TO_DAT(DATA_PEDIDO, '-', '') || '01', 'YYYYMMDD' AS COMPETENCIA_DATA,
+             TO_DATE(TO_CHAR(DATA_PEDIDO, 'YYYY-MM') || '-01', 'YYYY-MM-DD') AS COMPETENCIA, 
+             DATA_PEDIDO,
              DATA_ENVIO,
              DATA_VENCIMENTO,
              cast(PRECO_UNITARIO as numeric(18,2)) as PRECO_UNITARIO,
@@ -89,3 +94,5 @@ with
     )
      select * 
      from final_select
+
+
