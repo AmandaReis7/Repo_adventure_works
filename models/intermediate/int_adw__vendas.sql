@@ -63,8 +63,6 @@ with
              NUM_PEDIDO_COMPRA,
              QTD_PEDIDO,
              OFERTA_ESPECIAL as ID_OFERTA,
-             --TO_DATE(DATA_PEDIDO || '01', 'YYYYMM') AS COMPETENCIA_DATA,
-             --TO_DAT(DATA_PEDIDO, '-', '') || '01', 'YYYYMMDD' AS COMPETENCIA_DATA,
              TO_DATE(TO_CHAR(DATA_PEDIDO, 'YYYY-MM') || '-01', 'YYYY-MM-DD') AS COMPETENCIA, 
              DATA_PEDIDO,
              DATA_ENVIO,
