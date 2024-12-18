@@ -6,7 +6,7 @@ with
          storeid,
          territoryid,
          rowguid,
-         modifieddate
+         cast(modifieddate as data) as data_modificacao
         from {{source("projeto_adw", "CUSTOMER")}}
 
     )

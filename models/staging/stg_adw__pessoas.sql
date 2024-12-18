@@ -1,7 +1,7 @@
 with
     pessoas as (
         select
-         businessentityid as fk_id_pessoa,
+         businessentityid as pk_id_pessoa,
          persontype as tipo_pessoa,
          namestyle, 
          title,
@@ -13,9 +13,8 @@ with
          additionalcontactinfo, 
          demographics, 
          rowguid,  
-         modifieddate
-                 from {{source("projeto_adw", "PERSON")}}
-
+         cast(modifieddate as data) as data_modificacao
+         from {{source("projeto_adw", "PERSON")}}
     )
     select * from
     pessoas
