@@ -13,7 +13,7 @@ with
          additionalcontactinfo, 
          demographics, 
          rowguid,  
-         cast(modifieddate as data) as data_modificacao
+         cast(modifieddate as date) as data_modificacao
          from {{source("projeto_adw", "PERSON")}}
     )
 select * from

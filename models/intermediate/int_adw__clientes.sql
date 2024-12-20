@@ -20,8 +20,8 @@
          pessoas.tipo_pessoa,
          lojas.name as nome_loja
      from pessoas
-     left join clientes on clientes.customerid = pessoas.fk_id_pessoa
-     left join lojas on lojas.businessentityid = pessoas.fk_id_pessoa
+     left join clientes on clientes.customerid = pessoas.pk_id_pessoa
+     left join lojas on lojas.businessentityid = pessoas.pk_id_pessoa
      ) 
 select * from 
 clientes_completa

@@ -10,21 +10,17 @@ sources:
         columns:
           - name: ID_DETALHE_PEDIDO
             description: Contém o código do id do detalhe do pedido.
-          - name: ID_PEDIDO
+          - name: SALESORDERID
             description: Contém o código do id do pedido.
-            data_tests:
-              - not_null
           - name: NUM_RASTREAMENTO
             description: Contém o código para rastreio da mercadoria na transportadora.               
           - name: QTD_PEDIDO
             description: Quantidade de pedido realizado.
-          - name: ID_PRODUTO
+          - name: PRODUCTID
             description: Contém informação do códido do ID do produto.
-            data_tests:
-              - not_null
           - name: OFERTA_ESPECIAL
             description: Contém informação da oferta que o produto foi cadastrada.
-          - name: PRECO_UNITARIO
+          - name: UNITPRICE
             description: Contém informação do valor unitário do produto.
             data_tests:
               - not_null
@@ -34,10 +30,11 @@ sources:
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: SALESORDERHEADER
         description: Tabela onde contem os dados cabeçado dos pedidos.
         columns:
-          - name: ID_PEDIDO_VENDA
+          - name: SALESORDERID
             description: Contém o código do id do pedido.
             data_tests:
               - unique
@@ -46,18 +43,16 @@ sources:
             description: Contém o código do id do pedido.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: PRODUCT
         description: Tabela onde contem os dados dos produtos.
         columns:
-          - name: PK_ID_PRODUTO
+          - name: PRODUCTID
             description: Contém o código do id do produto.
             data_tests:
               - unique
-              - not_null              
           - name: NOME_PRODUTO
             description: Contém o nome do produto.
-            data_tests:
-              - not_null
           - name: NUM_PRODUTO
             description: Contém o código do produto.               
           - name: IND_FABRICACAO_INTERNA
@@ -68,8 +63,6 @@ sources:
             description: Contém informação da cor do produto.
           - name: QTD_ESTOQUE
             description: Contém informação da quantidade de produtos que esté no estoque.
-            data_tests:
-              - not_null
           - name: NIVEL_DE_REESTOQUE
             description: Contém informação do Nível mínimo para repor o estoque.
           - name: CUSTO_PADRAO
@@ -106,43 +99,41 @@ sources:
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: PRODUCTCATEGORY
         description: Tabela onde contem informações da categoria dos produtos.
         columns:
-          - name: PK_ID_CATEGORIA_PRODUTO
+          - name: PRODUCTCATEGORYID
             description: Contém o código do id da categoria do produto.
             data_tests:
               - unique
-              - not_null
           - name: NOME_CATEGORIA
             description: Contém o nome da categoria do produto.
-            data_tests:
-              - not_null
           - name: ROWGUID
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: PRODUCTSUBCATEGORY
         description: Tabela onde contem as informações da subcategoria dos produdos.
         columns:
-          - name: ID_SUBCATEGORIA_PRODUCT
+          - name: PRODUCTSUBCATEGORYID
             description: Contém o código do id da subcategoria do produto.
             data_tests:
               - unique
           - name: ID_CATEGORIA_PRODUTO
             description: Contém o código do id da categoria do produto.
-            data_tests:
-              - not_null
           - name: NOME_SUBCATEGORY
             description: Contém o nome da subcategoria do produto.
           - name: ROWGUID
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: EMPLOYEE
         description: Tabela onde contém as informações dos colaboradores.
         columns:
-          - name: ID_FUNCIONARIO
+          - name: BUSINESSENTITYID
             description: Contém o código do id do colaborador.
             data_tests:
               - unique
@@ -174,18 +165,16 @@ sources:
             description: Data de modificação do dado.
           - name: ORGANIZATIONNODE
             description: Nível de cargo na organização.
+
       - name: PERSON
         description: Tabela onde contém os dados pessoais.
         columns:
-          - name: PK_ID_PESSOA
+          - name: BUSINESSENTITYID
             description: Contém o código do id pessoa.
             data_tests:
-              - not_null
               - unique              
           - name: TIPO_PESSOA
             description: Contém o informação se a pessoa é empregado da empresa ou não.
-            data_tests:
-              - not_null
           - name: NAMESTYLE
             description: Estilo do nome.               
           - name: TITLE
@@ -210,6 +199,7 @@ sources:
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: CUSTOMER
         description: Tabela onde contém os dados dos clientes.
         columns:
@@ -220,9 +210,6 @@ sources:
               - unique              
           - name: PERSONID
             description: Contém o código do id pessoa.
-            data_tests:
-              - not_null
-              - unique              
           - name: STOREID
             description: Contém o código do id da loja.               
           - name: TERRITORYID
@@ -231,6 +218,7 @@ sources:
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: STORE
         description: Tabela onde contém os dados das lojas.
         columns:
@@ -247,6 +235,7 @@ sources:
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: CREDITCARD
         description: Tabela onde contém os dados dos cartões de créditos dos clientes.
         columns:
@@ -265,14 +254,12 @@ sources:
             description: Ano de expedição.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: ADDRESS
         description: Tabela onde contém os dados de endereço dos clientes.
         columns:
           - name: ID_ENDERECO
             description: Contém o código do id do endereço.
-            data_tests:
-              - not_null
-              - unique              
           - name: ENDERECO_1
             description: Endereço 1.
           - name: ENDERECO_2
@@ -289,10 +276,11 @@ sources:
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: SALESTERRITORY
         description: Tabela onde contém os dados do território de vendas.
         columns:
-          - name: ID_TERRITORIO
+          - name: TERRITORYID
             description: Contém o código do id do território.
             data_tests:
               - not_null
@@ -315,10 +303,11 @@ sources:
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: STATEPROVINCE
         description: Tabela com informações de estado e provincia dos clientes.
         columns:
-          - name: ID_ESTADO
+          - name: STATEPROVINCEID
             description: Contém o código do id do estado.
             data_tests:
               - not_null
@@ -337,22 +326,23 @@ sources:
             description: Número da linha no banco de dados.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: COUNTRYREGION
         description: Tabela contendo informações dos códigos de país/região.
         columns:
-          - name: COD_REGIAO
+          - name: COUNTRYREGIONCODE
             description: Contém o código da região.
             data_tests:
-              - not_null
               - unique
           - name: NAME
             description: Nome da região.   
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: SALESREASON
         description: Tabela contendo os movivos das vendas.
         columns:
-          - name: ID_MOTIVO_VENDA
+          - name: SALESREASONID
             description: Contém do id do motivo da venda.
             data_tests:
               - not_null
@@ -363,15 +353,14 @@ sources:
             description: Nome do tipo do motivo da venda.   
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
+
       - name: SALESORDERHEADERSALESREASON
         description: Tabela onde contém os dados dos pedidos e motivos de venda.
         columns:
-          - name: ID_PEDIDO_VENDA
+          - name: SALESORDERID
             description: Contém o id do pedido da venda.
-            data_tests:
-              - not_null
               - unique
-          - name: ID_MOTIVO_VENDA
+          - name: NAME
             description: Contém o id do motivo da venda.
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.

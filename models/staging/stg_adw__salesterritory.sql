@@ -10,7 +10,7 @@ with
          costytd as custo_do_ano,
          costlastyear as custo_ano_anterior,
          rowguid,
-         cast(modifieddate as data) as data_modificacao
+         cast(modifieddate as date) as data_modificacao
         from {{source("projeto_adw", "SALESTERRITORY")}}
     )
 select * from

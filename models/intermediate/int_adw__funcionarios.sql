@@ -29,7 +29,7 @@
          funcionarios.modifieddate,
          funcionarios.organizationnode
      from pessoas
-     left join funcionarios on funcionarios.id_funcionario = pessoas.fk_id_pessoa
+     left join funcionarios on funcionarios.id_funcionario = pessoas.pk_id_pessoa
      ) 
 select * from 
 funcionarios_completa
