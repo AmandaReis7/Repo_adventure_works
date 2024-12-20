@@ -6,7 +6,6 @@ with
          reasontype as tipo_motivo_venda,
          cast(modifieddate as date) as data_modificacao
         from {{source("projeto_adw", "SALESREASON")}}
-
     )
-    select * from
-    motivos_venda
+select * from
+motivos_venda

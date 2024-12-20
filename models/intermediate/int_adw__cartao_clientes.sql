@@ -13,10 +13,8 @@ with
          cardnumber as numero_cartao,
          expmonth as mes_expiracao,
          expyear as ano_expiracao
-
      from orderheader
-     left join cartao_clientes on cartao_clientes.creditcardid = orderheader.id_cartao_cred
-     
+     left join cartao_clientes on cartao_clientes.creditcardid = orderheader.id_cartao_cred     
      ) 
- select * from 
- cartao_clientes_completa
+select * from 
+cartao_clientes_completa

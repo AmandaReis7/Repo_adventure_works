@@ -16,5 +16,5 @@ with
          cast(modifieddate as data) as data_modificacao
          from {{source("projeto_adw", "PERSON")}}
     )
-    select * from
-    pessoas
+select * from
+pessoas

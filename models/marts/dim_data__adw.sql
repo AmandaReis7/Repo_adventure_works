@@ -14,8 +14,6 @@ with
             ,quadrimestre
             ,ano
         from {{ ref('int_adw__dim_data') }}
-    )
-
- 
+    ) 
 select *
 from datas

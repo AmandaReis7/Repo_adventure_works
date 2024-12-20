@@ -1,0 +1,110 @@
+version: 2
+models:
+  - name: fct_vendas__adw
+    description: Tabela onde contem todos os dados das vendas realizadas.
+    columns:
+    - name: ID_CLIENTE
+      description: Contém o código do id do cliente.
+      data_tests:
+      - unique
+      - not_null
+
+    - name: ID_VENDEDOR
+      description: Contém o código do id do vendedor.
+
+    - name: ID_PEDIDO
+      description: Contém o código do id do pedido.
+      data_tests:
+      - unique 
+      - not_null
+
+    - name: ID_PRODUTO
+      description: Contém o código do id do pedido.
+      data_tests:
+        - not_null            
+
+    - name: NUM_PEDIDO_COMPRA
+      description: Refere-se número registrado quando a compra é realizada.
+      data_tests:
+        - unique
+            
+
+    - name: QTD_PEDIDO
+      description: Refere-se à quantidade de pedidos realizado pelo cliente.
+
+    - name: OFERTA_ESPECIAL****
+      description: Refere-se ao código da oferta que o produto está cadastrada.
+
+    - name: DATA_PEDIDO
+      description: Contém a informação da data em que o pedido foi realizado.
+
+
+    - name: DATA_ENVIO
+      description: Contém a informação da data em que o pedido foi enviado.
+
+    - name: DATA_VENCIMENTO
+      description: Contém a informação da data em que a fatura será cobrada.
+
+    - name: PRECO_UNITARIO
+      description: Contém a informação do preço unitário do produto.
+
+    - name: DESC_PRECO_UNIT
+      description: Contém a informação do valor de desconto aplicado.
+
+    - name: SUBTOTAL
+      description: Refere-se ao valor do total devido subritrído do valor do frete e imposto.
+
+    - name: VLR_IMPOSTO
+      description: Contém a informação do valor de imposto aplicado.
+
+    - name: FRETE
+      description: Contém a informação do valor do frete.
+
+    - name: TOTAL_DEVIDO
+      description: Contém a informação do total que é devido para pagamento.
+
+    - name: VALOR_BRUTO
+      description: Contém a informação do valor sem nenhum desconto ou aplicação de imposto.
+
+    - name: VALOR_LIQUIDO
+      description: Contém a informação do valor após aplicação de desconto ou aplicação de imposto.
+
+    - name: TICKET_MEDIO
+      description: Contém a informação valor bruto - descontos do produto / número de pedidos .
+
+    - name: STATUS
+      description: Refere-se ao status em que o pedido se encontra.
+
+    - name: ID_TAXA_CAMBIO
+      description: Contém o cód da taxa.
+
+    - name: ID_METODO_ENVIO
+      description: Contém o cód do tipo de envio.
+
+    - name: ID_ENDERECO_ENVIO
+      description: Contém o cód do endereço.
+
+    - name: NUM_RASTREAMENTO
+      description: Contém o cód. utilizado para rastrear o pedido que está na transportadora.
+
+    - name: NUM_CONTA
+      description: Contém o número da conta do cliente.
+
+    - name: ID_ENDERECO_COBRANCA
+      description: Contém o cód do endereço de cobrança.
+
+    - name: ID_CARTAO_CRED
+      description: Contém o cód id do cartão do cadastrado.
+
+    - name: CD_APROV_CARTAO_CRED
+      description: Contém o cód de aprovação ou negativa do cartão cadastrado.
+
+    - name: FLAG_PEDIDO_ONLINE
+      description: Indica se a venda foi realizada de maneira online.
+
+    - name: COMENTARIO
+      description: Coluna destinada a comentários dos clientes.
+
+    - name: DATA_MODIFICACAO
+      description: Contém a data da modificação dos dados.
+      

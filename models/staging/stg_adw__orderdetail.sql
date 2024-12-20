@@ -11,7 +11,7 @@ with
          unitpricediscount as desc_preco_unit,
          rowguid,
          cast(modifieddate as date) as data_modificacao
-    from {{ source("projeto_adw", "SALESORDERDETAIL") }}
-
-)
-select * from order_detail
+        from {{ source("projeto_adw", "SALESORDERDETAIL") }}
+    )
+select * from 
+order_detail

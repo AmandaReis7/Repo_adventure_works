@@ -39,7 +39,6 @@ with
          pedidos.TOTAL_DEVIDO,
          pedidos.COMENTARIO,
          pedidos.data_modificacao
-
      from pedidos_detalhe
      inner join pedidos on pedidos.ID_PEDIDO_VENDA = pedidos_detalhe.id_pedido
 ),
@@ -48,8 +47,7 @@ with
              pedidos_completa.*,
              pedidos_detalhe.QTD_PEDIDO * pedidos_detalhe.PRECO_UNITARIO AS valor_bruto,
              pedidos_detalhe.QTD_PEDIDO * pedidos_detalhe.PRECO_UNITARIO * (1 - pedidos_detalhe.DESC_PRECO_UNIT) AS valor_liquido,
-             valor_liquido/pedidos_completa.QTD_PEDIDO as ticket_medio
-                          
+             valor_liquido/pedidos_completa.QTD_PEDIDO as ticket_medio                          
         FROM pedidos_completa
         INNER JOIN pedidos_detalhe ON pedidos_completa.id_pedido = pedidos_detalhe.id_pedido
  ),
@@ -90,7 +88,7 @@ with
              DATA_MODIFICACAO
         from metricas
     )
-     select * 
-     from final_select
+select * 
+from final_select
 
 

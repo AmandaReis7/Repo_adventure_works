@@ -19,18 +19,17 @@ with
          endereco.endereco_2,
          endereco.cidade,
          estado_provincia.name as nome_estado,
-         territorio_vendas.cod_pais as "CÓD_PAÍS",
-         territorio_vendas.name as "TERRITÓRIO_VENDAS",
+         territorio_vendas.cod_pais as "cod_pais",
+         territorio_vendas.name as "territorio_vendas",
          cod_regiao.name as pais,
          endereco.cod_cx_postal,
          endereco.spatiallocation,
          endereco.rowguid,
          endereco.data_modificacao
-
      from estado_provincia
      left join endereco on endereco.id_estado = estado_provincia.id_estado
-     left join territorio_vendas on territorio_vendas.id_territorio = estado_provincia.fk_id_territorio
-     left join cod_regiao on cod_regiao.fk_cod_regiao = estado_provincia.cod_regiao_pais 
+     left join territorio_vendas on territorio_vendas.id_territorio = estado_provincia.pk_id_territorio
+     left join cod_regiao on cod_regiao.cod_regiao = estado_provincia.cod_regiao_pais 
      ) 
- select * from 
- endereco_completa
+select * from 
+endereco_completa

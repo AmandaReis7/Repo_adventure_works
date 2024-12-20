@@ -8,7 +8,6 @@ with
          rowguid,
          cast(modifieddate as data) as data_modificacao
         from {{source("projeto_adw", "CUSTOMER")}}
-
     )
-    select * from
-    clientes
+select * from
+clientes

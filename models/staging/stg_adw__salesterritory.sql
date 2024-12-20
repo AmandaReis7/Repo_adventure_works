@@ -12,7 +12,6 @@ with
          rowguid,
          cast(modifieddate as data) as data_modificacao
         from {{source("projeto_adw", "SALESTERRITORY")}}
-
     )
-    select * from
-    territorio_vendas
+select * from
+territorio_vendas

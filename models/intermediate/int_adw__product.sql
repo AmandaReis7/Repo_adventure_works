@@ -34,10 +34,9 @@ with
         categorias.NOME_CATEGORIA,
         categorias.ROWGUID,
         sub_categorias.NOME_SUBCATEGORY
-
      from produtos
      left join categorias on categorias.fk_id_categoria_produto = produtos.pk_id_produto
      left join sub_categorias on sub_categorias.id_subcategoria_product = produtos.productsubcategoryid
      ) 
- select * from 
- produtos_completa
+select * from 
+produtos_completa

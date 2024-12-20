@@ -28,4 +28,5 @@ with
             rowguid guia_linha
         from {{ source("projeto_adw", "SALESORDERHEADER")}} 
     ) 
-select * from orderheader
+select * from 
+orderheader

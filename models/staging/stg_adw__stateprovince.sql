@@ -10,7 +10,6 @@ with
          rowguid,
          cast(modifieddate as date) as data_modificacao
         from {{source("projeto_adw", "STATEPROVINCE")}}
-
     )
-    select * from
-    estado_provincia
+select * from
+estado_provincia

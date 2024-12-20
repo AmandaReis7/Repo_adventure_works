@@ -7,11 +7,9 @@ with
          rowguid,
          cast(modifieddate as date) as data_modificacao
         from {{source ("projeto_adw", "PRODUCTSUBCATEGORY")}}
-
     )
-
- select * from
- product_subcategory
+select * from
+product_subcategory
 
 
 
