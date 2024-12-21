@@ -13,5 +13,8 @@ with
          cast(modifieddate as date) as data_modificacao
         from {{ source("projeto_adw", "SALESORDERDETAIL") }}
     )
-select * from 
+select *
+from 
 order_detail
+
+

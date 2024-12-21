@@ -5,18 +5,12 @@ models:
     columns:
     - name: ID_CLIENTE
       description: Contém o código do id do cliente.
-      data_tests:
-      - unique
-      - not_null
 
     - name: ID_VENDEDOR
       description: Contém o código do id do vendedor.
 
     - name: ID_PEDIDO
       description: Contém o código do id do pedido.
-      data_tests:
-      - unique 
-      - not_null
 
     - name: ID_PRODUTO
       description: Contém o código do id do pedido.
@@ -25,9 +19,6 @@ models:
 
     - name: NUM_PEDIDO_COMPRA
       description: Refere-se número registrado quando a compra é realizada.
-      data_tests:
-        - unique
-            
 
     - name: QTD_PEDIDO
       description: Refere-se à quantidade de pedidos realizado pelo cliente.

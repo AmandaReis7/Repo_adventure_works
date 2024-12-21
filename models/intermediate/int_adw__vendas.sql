@@ -42,14 +42,26 @@ with
      from pedidos_detalhe
      inner join pedidos on pedidos.ID_PEDIDO_VENDA = pedidos_detalhe.id_pedido
 ),
+    pedidos_completa2 as (
+        select *,            
+            case 
+                when status = 1 then 'In process'
+                when status = 2 then 'Approved'
+                when status = 3 then 'Backordered'
+                when status = 4 then 'Rejected'
+                when status = 5 then 'Shipped'
+                when status = 6 then 'Cancelled'
+                else 'Not informed'
+            end dsc_status
+        from pedidos_completa
+    ),
     metricas as (
         select
-             pedidos_completa.*,
-             pedidos_detalhe.QTD_PEDIDO * pedidos_detalhe.PRECO_UNITARIO AS valor_bruto,
-             pedidos_detalhe.QTD_PEDIDO * pedidos_detalhe.PRECO_UNITARIO * (1 - pedidos_detalhe.DESC_PRECO_UNIT) AS valor_liquido,
-             valor_liquido/pedidos_completa.QTD_PEDIDO as ticket_medio                          
-        FROM pedidos_completa
-        INNER JOIN pedidos_detalhe ON pedidos_completa.id_pedido = pedidos_detalhe.id_pedido
+             pedidos_completa2.*,
+             pedidos_completa2.preco_unitario*pedidos_completa2.qtd_pedido as valor_bruto,
+             pedidos_completa2.QTD_PEDIDO*pedidos_completa2.PRECO_UNITARIO*(1 - pedidos_completa2.DESC_PRECO_UNIT) AS valor_liquido,
+             valor_liquido/pedidos_completa2.QTD_PEDIDO as ticket_medio       
+        FROM pedidos_completa2        
  ),
     final_select as (
         select
@@ -59,7 +71,7 @@ with
              ID_PEDIDO,
              ID_PRODUTO,
              NUM_PEDIDO_COMPRA,
-             QTD_PEDIDO,
+             cast(QTD_PEDIDO as numeric) as QTD_PEDIDO,
              OFERTA_ESPECIAL as ID_OFERTA,
              TO_DATE(TO_CHAR(DATA_PEDIDO, 'YYYY-MM') || '-01', 'YYYY-MM-DD') AS COMPETENCIA, 
              DATA_PEDIDO,
@@ -74,7 +86,7 @@ with
              cast(VALOR_BRUTO as numeric(18,2)) as VALOR_BRUTO,
              cast(VALOR_LIQUIDO as numeric(18,2)) as VALOR_LIQUIDO,             
              cast(TICKET_MEDIO as numeric(18,2)) TICKET_MEDIO,
-             STATUS,
+             DSC_STATUS,
              ID_TAXA_CAMBIO,
              ID_METODO_ENVIO,
              ID_ENDERECO_ENVIO,
@@ -85,10 +97,8 @@ with
              CD_APROV_CARTAO_CRED,
              FLAG_PEDIDO_ONLINE,
              COMENTARIO,
-             DATA_MODIFICACAO
+             DATA_MODIFICACAO             
         from metricas
     )
-select * 
-from final_select
-
-
+SELECT *
+FROM final_select
