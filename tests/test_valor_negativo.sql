@@ -2,6 +2,7 @@
         severity = 'error'
     )
 }}
+
 with
     negative_value as (
         select 
