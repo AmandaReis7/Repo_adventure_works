@@ -2,7 +2,8 @@ with
     cartao_clientes as (
      select *
      from {{ref('stg_adw__creditcard')}}
- ), orderheader as (
+ ), 
+    orderheader as (
      select *
      from {{ref('stg_adw__orderheader')}}
  ),
@@ -15,6 +16,7 @@ with
          expyear as ano_expiracao
      from orderheader
      left join cartao_clientes on cartao_clientes.creditcardid = orderheader.id_cartao_cred     
-     ) 
-select * from 
+) 
+select * 
+from 
 cartao_clientes_completa

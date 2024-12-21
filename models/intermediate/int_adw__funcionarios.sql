@@ -2,11 +2,11 @@
     funcionarios as (
      select * 
      from {{ref("stg_adw__employee")}}
- ),
+),
     pessoas as (
      select *
      from {{ref('stg_adw__pessoas')}}
- ),
+),
     funcionarios_completa as (
      select
          funcionarios.id_funcionario,
@@ -30,6 +30,7 @@
          funcionarios.organizationnode
      from pessoas
      left join funcionarios on funcionarios.id_funcionario = pessoas.pk_id_pessoa
-     ) 
-select * from 
+) 
+select * 
+from 
 funcionarios_completa

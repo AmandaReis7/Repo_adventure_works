@@ -15,11 +15,7 @@ with
             ,count(distinct id_pedido_venda) as qtd_pedido
         from {{ ref('stg_adw__orderheader') }}
         where year(data_pedido) = '2011'
-
-    ) 
+) 
     select qtd_pedido
     from pedido
     where qtd_pedido != '1607' 
-
-
-    

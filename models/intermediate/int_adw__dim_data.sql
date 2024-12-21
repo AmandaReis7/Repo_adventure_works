@@ -1,7 +1,7 @@
 with 
     raw_generated_data as (
         {{ dbt_date.get_date_dimension("2011-01-01", "2050-12-31") }}
-    ),
+),
     base_data as (
         select
             date_day as fk_data,

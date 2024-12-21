@@ -22,6 +22,7 @@
      from pessoas
      left join clientes on clientes.customerid = pessoas.pk_id_pessoa
      left join lojas on lojas.businessentityid = pessoas.pk_id_pessoa
-     ) 
-select * from 
+) 
+select * 
+from 
 clientes_completa
