@@ -1,10 +1,14 @@
+{{ config (
+        severity = 'error'
+    )
+}}
+
 with
     negative_value as (
         select 
-             totaldue
-        from {{ source("projeto_adw", "SALESORDERHEADER") }}
+             valor_liquido
+        from {{ ref('int_adw__vendas') }} 
     )
-
  select *
 from negative_value
-where totaldue < 0
+where valor_liquido < 0

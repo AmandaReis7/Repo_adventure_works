@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: int_adw__dim_data
+    description: Preparação da dimensão de data.
+
+    columns:
+      - name: fk_data 
+        description:  Data
+        tests:
+          - unique
+          
+      - name: data_anterior 
+        description: Data anterior
+
+      - name: data_proxima 
+        description: Próxima data
+
+      - name: dia_da_semana 
+        description: dia da semana numérico
+
+      - name: dsc_dia_da_semana 
+        description: Dia da semana em texto
+
+      - name: dia_do_mes 
+        description: Dia do mês numérico
+
+      - name: dia_do_ano 
+        description: Dia do ano numérico
+
+      - name: semana_do_ano 
+        description: Semana do ano numérico
+
+      - name: mes_do_ano 
+        description: Mês do ano numérico
+          
+      - name: dsc_mes_do_ano 
+        description: Mês do ano texto abreviado
+
+      - name: quadrimestre 
+        description: Quadrimestre do ano numérico

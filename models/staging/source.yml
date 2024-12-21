@@ -1,5 +1,4 @@
-version: 1
-
+version: 2
 sources:
   - name: projeto_adw
     description: Base de dados da empresa Adventure Works.
@@ -7,49 +6,361 @@ sources:
     schema: raw_adventure_works
     tables:  
       - name: SALESORDERDETAIL
-        description: tabela onde contem os detalhes de cada venda realizada
+        description: tabela onde contem os detalhes de cada venda realizada.
+        columns:
+          - name: ID_DETALHE_PEDIDO
+            description: Contém o código do id do detalhe do pedido.
+          - name: SALESORDERID
+            description: Contém o código do id do pedido.
+          - name: NUM_RASTREAMENTO
+            description: Contém o código para rastreio da mercadoria na transportadora.               
+          - name: QTD_PEDIDO
+            description: Quantidade de pedido realizado.
+          - name: PRODUCTID
+            description: Contém informação do códido do ID do produto.
+          - name: OFERTA_ESPECIAL
+            description: Contém informação da oferta que o produto foi cadastrada.
+          - name: UNITPRICE
+            description: Contém informação do valor unitário do produto.
+            data_tests:
+              - not_null
+          - name: DESC_PRECO_UNIT
+            description: Contém informação do valor do desconto unitário do produto.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: SALESORDERHEADER
-        description: Tabela onde contem os dados cabeçado dos pedidos   
+        description: Tabela onde contem os dados cabeçado dos pedidos.
+        columns:
+          - name: SALESORDERID
+            description: Contém o código do id do pedido.
+            data_tests:
+              - unique
+              - not_null                  
+          - name: ID_MOTIVO_VENDA
+            description: Contém o código do id do pedido.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: PRODUCT
         description: Tabela onde contem os dados dos produtos.
+        columns:
+          - name: PRODUCTID
+            description: Contém o código do id do produto.
+            data_tests:
+              - unique
+          - name: NOME_PRODUTO
+            description: Contém o nome do produto.
+          - name: NUM_PRODUTO
+            description: Contém o código do produto.               
+          - name: IND_FABRICACAO_INTERNA
+            description: Coluna indicando se o produto é de fabricação interna.
+          - name: IND_PRODUTO_FINALIZADO
+            description: Coluna indicando se o produto é de está finalizado.
+          - name: COR
+            description: Contém informação da cor do produto.
+          - name: QTD_ESTOQUE
+            description: Contém informação da quantidade de produtos que esté no estoque.
+          - name: NIVEL_DE_REESTOQUE
+            description: Contém informação do Nível mínimo para repor o estoque.
+          - name: CUSTO_PADRAO
+            description: Contém informação do valor de custo padrão.
+          - name: LISTA_DE_PRECO
+            description: Contém valor de uma lista padrão de preço.
+          - name: TAMANHO
+            description: Contém informação do tamanho do produto.
+          - name: COD_MEDIDA_TAMANHO
+            description: Contém o código do tamanho do produto.
+          - name: COD_UNID_MED_PESO
+            description: Contém o código do peso do produto.
+          - name: PESO
+            description: Contém o peso do produto.
+          - name: DIAS_PARA_FABRICACAO
+            description: Contém a informação da quantidade em dias que o produto demora para se fabricado.
+          - name: PRODUCTLINE
+            description: Contém informação da linha do produto.
+          - name: CLASS
+            description: Contém informação da classe do produto.
+          - name: STYLE
+            description: Contém informação do estilo do produto.
+          - name: PRODUCTSUBCATEGORYID
+            description: Código de ID da subcategoria do produto.
+          - name: PRODUCTMODELID
+            description: Código de ID do modelo do produto.
+          - name: DATA_INICIO_VENDA
+            description: Data inicio da venda.
+          - name: DATA_FIM_VENDA
+            description: Data fim da venda.
+          - name: DATA_DESCONTINICACAO
+            description: Data da descontinuação do produto.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: PRODUCTCATEGORY
         description: Tabela onde contem informações da categoria dos produtos.
+        columns:
+          - name: PRODUCTCATEGORYID
+            description: Contém o código do id da categoria do produto.
+            data_tests:
+              - unique
+          - name: NOME_CATEGORIA
+            description: Contém o nome da categoria do produto.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: PRODUCTSUBCATEGORY
         description: Tabela onde contem as informações da subcategoria dos produdos.
+        columns:
+          - name: PRODUCTSUBCATEGORYID
+            description: Contém o código do id da subcategoria do produto.
+            data_tests:
+              - unique
+          - name: ID_CATEGORIA_PRODUTO
+            description: Contém o código do id da categoria do produto.
+          - name: NOME_SUBCATEGORY
+            description: Contém o nome da subcategoria do produto.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: EMPLOYEE
-        description: Tabela onde contém as informações dos colaboradores
+        description: Tabela onde contém as informações dos colaboradores.
+        columns:
+          - name: BUSINESSENTITYID
+            description: Contém o código do id do colaborador.
+            data_tests:
+              - unique
+          - name: NATIONALIDNUMBER
+            description: Contém o código do id da nacionalidade do colaborador.
+          - name: ID_LOGIN
+            description: Contém o ID do login do colaborador.
+          - name: JOBTITLE
+            description: Contém informações do cardo do colaborador.
+          - name: BIRTHDATE
+            description: Data de nascimento do colaborador.
+          - name: MARITALSTATUS
+            description: Estado Civil do colaborador.
+          - name: GENERO
+            description: Gênero do colaborador.
+          - name: DT_CONTRATACAO
+            description: Data de contratação do colaborador.
+          - name: IND_FUNC_ASSALARIADO
+            description: Indicador se a pessoa é colaborador.
+          - name: HORAS_DE_FERIAS
+            description: Quantidade de férias que o colaborador tem direito.
+          - name: HORAS_DE_LICENCA_MEDICA
+            description: Quantidade de dias que o colaborador ainda tem de licença médica.
+          - name: IND_ATIVO
+            description: Indicador se colaborador está ativo.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: MODIFIEDDATE
+            description: Data de modificação do dado.
+          - name: ORGANIZATIONNODE
+            description: Nível de cargo na organização.
 
       - name: PERSON
-        description: Tabela onde contém os dados pessoais
+        description: Tabela onde contém os dados pessoais.
+        columns:
+          - name: BUSINESSENTITYID
+            description: Contém o código do id pessoa.
+            data_tests:
+              - unique              
+          - name: TIPO_PESSOA
+            description: Contém o informação se a pessoa é empregado da empresa ou não.
+          - name: NAMESTYLE
+            description: Estilo do nome.               
+          - name: TITLE
+            description: Titulo que a pessoa ocupa.
+          - name: FIRSTNAME
+            description: Primeiro nome da pessoa.
+            data_tests:
+              - not_null
+          - name: MIDDLENAME
+            description: Nome do meio da pessoa.
+          - name: LASTNAME
+            description: Ultimo nome da pessoa.
+          - name: SUFFIX
+            description: Sufixo do nome da pessoa.
+          - name: EMAILPROMOTION
+            description: Indicador se a pessoa recebe o não email de promoção.
+          - name: ADDITIONALCONTACTINFO
+            description: Contato adicional.
+          - name: DEMOGRAPHICS
+            description: Informação demografica.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: CUSTOMER
         description: Tabela onde contém os dados dos clientes.
+        columns:
+          - name: CUSTOMERID
+            description: Contém o código do id do cliente.
+            data_tests:
+              - not_null
+              - unique              
+          - name: PERSONID
+            description: Contém o código do id pessoa.
+          - name: STOREID
+            description: Contém o código do id da loja.               
+          - name: TERRITORYID
+            description: Contém o código do id do território da venda.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: STORE
         description: Tabela onde contém os dados das lojas.
+        columns:
+          - name: BUSINESSENTITYID
+            description: Contém o código do id que identidica a empresa.
+            data_tests:
+              - not_null
+              - unique              
+          - name: NAME
+            description: Contém Nome da loja.
+          - name: SALESPERSONID
+            description: Contém o código do id do vendedor.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: CREDITCARD
         description: Tabela onde contém os dados dos cartões de créditos dos clientes.
+        columns:
+          - name: CREDITCARDID
+            description: Contém o código do id do cartão.
+            data_tests:
+              - not_null
+              - unique              
+          - name: CARDTYPE
+            description: Contém informação do tipo de cartão.
+          - name: CARDNUMBER
+            description: Contém o númeto do cartão.
+          - name: EXPMONTH
+            description: Mês de expedição.
+          - name: EXPYEAR
+            description: Ano de expedição.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: ADDRESS
         description: Tabela onde contém os dados de endereço dos clientes.
+        columns:
+          - name: ID_ENDERECO
+            description: Contém o código do id do endereço.
+          - name: ENDERECO_1
+            description: Endereço 1.
+          - name: ENDERECO_2
+            description: Endereço 2.
+          - name: CIDADE
+            description: Cidade.
+          - name: ID_ESTADO
+            description: Código id estado.
+          - name: COD_CX_POSTAL
+            description: Código caixa postal.
+          - name: SPATIALLOCATION
+            description: Código localização.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: SALESTERRITORY
         description: Tabela onde contém os dados do território de vendas.
+        columns:
+          - name: TERRITORYID
+            description: Contém o código do id do território.
+            data_tests:
+              - not_null
+              - unique              
+          - name: NAME
+            description: Nome do território.
+          - name: COD_PAIS
+            description: Código do país.
+          - name: group
+            description: Grupo do território.
+          - name: VENDAS_DO_ANO
+            description: Vendas do ano.
+          - name: VENDAS_ANO_ATERIOR
+            description: Vendas do ano anterior.
+          - name: CUSTO_DO_ANO
+            description: Custo do ano.
+          - name: CUSTO_ANO_ANTERIOR
+            description: Custo do ano anterior.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: STATEPROVINCE
         description: Tabela com informações de estado e provincia dos clientes.
+        columns:
+          - name: STATEPROVINCEID
+            description: Contém o código do id do estado.
+            data_tests:
+              - not_null
+              - unique              
+          - name: COD_ESTADO
+            description: Contém o código do estado.
+          - name: COD_REGIAO_PAIS
+            description: Código do região do país "UF".
+          - name: ISONLYSTATEPROVINCEFLAG
+            description: Indicador se é bandeira unica na provincia.
+          - name: NAME
+            description: Nome do estado.
+          - name: PK_ID_TERRITORIO
+            description: Código do id do território.
+          - name: ROWGUID
+            description: Número da linha no banco de dados.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: COUNTRYREGION
         description: Tabela contendo informações dos códigos de país/região.
+        columns:
+          - name: COUNTRYREGIONCODE
+            description: Contém o código da região.
+            data_tests:
+              - unique
+          - name: NAME
+            description: Nome da região.   
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: SALESREASON
         description: Tabela contendo os movivos das vendas.
+        columns:
+          - name: SALESREASONID
+            description: Contém do id do motivo da venda.
+            data_tests:
+              - not_null
+              - unique
+          - name: NOME_MOTIVO_VENDA
+            description: Nome do motivo da venda.
+          - name: TIPO_MOTIVO_VENDA
+            description: Nome do tipo do motivo da venda.   
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.
 
       - name: SALESORDERHEADERSALESREASON
-        description: Tabela onde contém os dados dos pedidos e motivos de venda
+        description: Tabela onde contém os dados dos pedidos e motivos de venda.
+        columns:
+          - name: SALESORDERID
+            description: Contém o id do pedido da venda.
+              - unique
+          - name: NAME
+            description: Contém o id do motivo da venda.
+          - name: DATA_MODIFICACAO
+            description: Data de modificação do dado.

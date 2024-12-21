@@ -30,14 +30,13 @@ with
         produtos.DIAS_PARA_FABRICACAO,
         produtos.PRODUCTLINE,
         produtos.class,
-        categorias.FK_ID_CATEGORIA_PRODUTO as ID_CATEGORIA,
+        categorias.PK_ID_CATEGORIA_PRODUTO as ID_CATEGORIA,
         categorias.NOME_CATEGORIA,
         categorias.ROWGUID,
         sub_categorias.NOME_SUBCATEGORY
-
      from produtos
-     left join categorias on categorias.fk_id_categoria_produto = produtos.pk_id_produto
+     left join categorias on categorias.pk_id_categoria_produto = produtos.pk_id_produto
      left join sub_categorias on sub_categorias.id_subcategoria_product = produtos.productsubcategoryid
      ) 
- select * from 
- produtos_completa
+select * from 
+produtos_completa
