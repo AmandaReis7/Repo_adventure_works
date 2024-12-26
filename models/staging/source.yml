@@ -289,7 +289,7 @@ sources:
             description: Nome do território.
           - name: COD_PAIS
             description: Código do país.
-          - name: group
+          - name: "group"
             description: Grupo do território.
           - name: VENDAS_DO_ANO
             description: Vendas do ano.
@@ -340,7 +340,7 @@ sources:
             description: Data de modificação do dado.
 
       - name: SALESREASON
-        description: Tabela contendo os movivos das vendas.
+        description: Tabela contendo os motivos das vendas.
         columns:
           - name: SALESREASONID
             description: Contém do id do motivo da venda.
@@ -359,7 +359,9 @@ sources:
         columns:
           - name: SALESORDERID
             description: Contém o id do pedido da venda.
+            data_tests:
               - unique
+                  
           - name: NAME
             description: Contém o id do motivo da venda.
           - name: DATA_MODIFICACAO
