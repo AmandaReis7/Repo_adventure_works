@@ -2,11 +2,11 @@ with
     pedidos_detalhe as (
      select * 
      from {{ref("stg_adw__orderdetail")}}
- ),
+),
     pedidos as (
      select *
      from {{ref('stg_adw__orderheader')}}
- ),
+),
     pedidos_completa as (
      select
          pedidos.ID_CLIENTE,
@@ -54,7 +54,7 @@ with
                 else 'Not informed'
             end dsc_status
         from pedidos_completa
-    ),
+),
     metricas as (
         select
              pedidos_completa2.*,
@@ -62,7 +62,7 @@ with
              pedidos_completa2.QTD_PEDIDO*pedidos_completa2.PRECO_UNITARIO*(1 - pedidos_completa2.DESC_PRECO_UNIT) AS valor_liquido,
              valor_liquido/pedidos_completa2.QTD_PEDIDO as ticket_medio       
         FROM pedidos_completa2        
- ),
+),
     final_select as (
         select
              ID_CLIENTE,
@@ -99,6 +99,6 @@ with
              COMENTARIO,
              DATA_MODIFICACAO             
         from metricas
-    )
+)
 SELECT *
 FROM final_select
