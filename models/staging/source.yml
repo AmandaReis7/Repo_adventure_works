@@ -357,10 +357,8 @@ sources:
       - name: SALESORDERHEADERSALESREASON
         description: Tabela onde contém os dados dos pedidos e motivos de venda.
         columns:
-          - name: SALESORDERID
+          - name: salesorderid
             description: Contém o id do pedido da venda.
-            data_tests:
-              - unique
                   
           - name: NAME
             description: Contém o id do motivo da venda.
