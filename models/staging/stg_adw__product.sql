@@ -25,7 +25,7 @@ with product as (
         discontinueddate as data_descontinicacao,
         rowguid,
         cast(modifieddate as date) as data_modificacao
-    from {{ source("projeto_adw", "PRODUCT") }}
+    from {{ source("projeto_adw", "product") }}
 )
 select * 
 from product

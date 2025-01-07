@@ -25,7 +25,7 @@ with orderheader as (
         comment as comentario,  
         cast(modifieddate as date) as data_modificacao,
         rowguid as guia_linha
-    from {{ source("projeto_adw", "SALESORDERHEADER") }} 
+    from {{ source("projeto_adw", "salesorderheader") }} 
 )
 select * 
 from orderheader

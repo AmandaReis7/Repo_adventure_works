@@ -5,7 +5,7 @@ with
             salesreasonid as id_motivo_venda,
             cast(modifieddate as date) as data_modificacao
         from 
-            {{ source("projeto_adw", "SALESORDERHEADERSALESREASON") }}
+            {{ source("projeto_adw", "salesorderheadersalesreason") }}
     )
 
 select *

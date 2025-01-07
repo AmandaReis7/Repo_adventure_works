@@ -4,7 +4,7 @@ with product_category as (
         name as nome_categoria,  
         rowguid,  
         cast(modifieddate as date) as data_modificacao
-    from {{ source("projeto_adw", "PRODUCTCATEGORY") }}
+    from {{ source("projeto_adw", "productcategory") }}
 )
 select * 
 from product_category
