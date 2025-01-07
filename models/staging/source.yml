@@ -5,11 +5,14 @@ sources:
     database: FEA24_9
     schema: raw_adventure_works
     tables:  
-      - name: SALESORDERDETAIL
+      - name: salesorderdetail
         description: tabela onde contem os detalhes de cada venda realizada.
         columns:
-          - name: ID_DETALHE_PEDIDO
+          - name: SALESORDERDETAILID
             description: Contém o código do id do detalhe do pedido.
+            data_tests:
+              - unique
+              - not_null              
           - name: SALESORDERID
             description: Contém o código do id do pedido.
           - name: NUM_RASTREAMENTO
@@ -31,7 +34,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: SALESORDERHEADER
+      - name: salesorderheader
         description: Tabela onde contem os dados cabeçado dos pedidos.
         columns:
           - name: SALESORDERID
@@ -41,16 +44,19 @@ sources:
               - not_null                  
           - name: ID_MOTIVO_VENDA
             description: Contém o código do id do pedido.
+            data_test:
+              - not_null              
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: PRODUCT
+      - name: product
         description: Tabela onde contem os dados dos produtos.
         columns:
           - name: PRODUCTID
             description: Contém o código do id do produto.
             data_tests:
               - unique
+              - not_null              
           - name: NOME_PRODUTO
             description: Contém o nome do produto.
           - name: NUM_PRODUTO
@@ -100,7 +106,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: PRODUCTCATEGORY
+      - name: productcategory
         description: Tabela onde contem informações da categoria dos produtos.
         columns:
           - name: PRODUCTCATEGORYID
@@ -114,7 +120,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: PRODUCTSUBCATEGORY
+      - name: productsubcategory
         description: Tabela onde contem as informações da subcategoria dos produdos.
         columns:
           - name: PRODUCTSUBCATEGORYID
@@ -130,7 +136,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: EMPLOYEE
+      - name: employee
         description: Tabela onde contém as informações dos colaboradores.
         columns:
           - name: BUSINESSENTITYID
@@ -166,7 +172,7 @@ sources:
           - name: ORGANIZATIONNODE
             description: Nível de cargo na organização.
 
-      - name: PERSON
+      - name: person
         description: Tabela onde contém os dados pessoais.
         columns:
           - name: BUSINESSENTITYID
@@ -200,7 +206,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: CUSTOMER
+      - name: customer
         description: Tabela onde contém os dados dos clientes.
         columns:
           - name: CUSTOMERID
@@ -219,7 +225,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: STORE
+      - name: store
         description: Tabela onde contém os dados das lojas.
         columns:
           - name: BUSINESSENTITYID
@@ -236,7 +242,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: CREDITCARD
+      - name: creditcard
         description: Tabela onde contém os dados dos cartões de créditos dos clientes.
         columns:
           - name: CREDITCARDID
@@ -255,7 +261,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: ADDRESS
+      - name: address
         description: Tabela onde contém os dados de endereço dos clientes.
         columns:
           - name: ID_ENDERECO
@@ -277,7 +283,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: SALESTERRITORY
+      - name: salesterritory
         description: Tabela onde contém os dados do território de vendas.
         columns:
           - name: TERRITORYID
@@ -304,7 +310,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: STATEPROVINCE
+      - name: stateprovince
         description: Tabela com informações de estado e provincia dos clientes.
         columns:
           - name: STATEPROVINCEID
@@ -327,7 +333,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: COUNTRYREGION
+      - name: countryregion
         description: Tabela contendo informações dos códigos de país/região.
         columns:
           - name: COUNTRYREGIONCODE
@@ -339,7 +345,7 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: SALESREASON
+      - name: salesreason
         description: Tabela contendo os motivos das vendas.
         columns:
           - name: SALESREASONID
@@ -354,12 +360,14 @@ sources:
           - name: DATA_MODIFICACAO
             description: Data de modificação do dado.
 
-      - name: SALESORDERHEADERSALESREASON
+      - name: salesorderheadersalesreason
         description: Tabela onde contém os dados dos pedidos e motivos de venda.
         columns:
           - name: salesorderid
             description: Contém o id do pedido da venda.
-                  
+            data_test:
+              - unique
+              - not_null
           - name: NAME
             description: Contém o id do motivo da venda.
           - name: DATA_MODIFICACAO

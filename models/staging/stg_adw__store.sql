@@ -8,7 +8,7 @@ with
             rowguid,
             cast(modifieddate as date) as data_modificacao
         from 
-            {{ source("projeto_adw", "STORE") }}
+            {{ source("projeto_adw", "store") }}
     )
 
 select *

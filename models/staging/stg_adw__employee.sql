@@ -17,7 +17,7 @@ with
             modifieddate,  
             organizationnode
         from 
-            {{ source("projeto_adw", "EMPLOYEE") }}
+            {{ source("projeto_adw", "employee") }}
     )
 
 select *
